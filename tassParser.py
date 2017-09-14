@@ -171,11 +171,8 @@ class TassParser(object):
             elif x.type == TassLineGroupType.section:
                 self.evalutate_block_assigns(x.children[1:-1], block_assign_lines_to_evaluate, weak_block_assign_to_evaluate,TBE)
 
-#inputFile = "D:/GitHub/test/small_test.asm"
-inputFile = "D:/GitHub/duckhunt/duckhunt.asm"
-
 try:
-    #inputFile = sys.argv[1]
+    inputFile = sys.argv[1]
     outputFile = inputFile[:-3]+"mla"
 
     pylog.open(inputFile[:-3]+"log")

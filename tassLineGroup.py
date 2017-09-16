@@ -44,6 +44,7 @@ g_lineIDstrings = [[".weak", TassLineGroupType.weak, 0, 1],
                    [".include", TassLineGroupType.include, 0, 0],
                    [".binary", TassLineGroupType.binary, 1, 0],
                    ["!", TassLineGroupType.midlevel, 0, 0],
+                   ["!!", TassLineGroupType.midlevel, 0, 0],
                    [".bend", TassLineGroupType.end_block, 0, 0],
                    [".endc", TassLineGroupType.end_comment, 0, 0],
                    [".ends", TassLineGroupType.end_struct, 0, 0],
@@ -91,6 +92,10 @@ class TassLineGroup(object):
         strings = []
         for c in self.children:
             if isinstance(c, str):
+                # Handle both !! and ! at the start of the line
+                if c.strip().startswith("!!"):
+                    c = c.replace("!!" , "!" , 1)
+
                 strings.append(c)
             else:
                 strings += c.get_all_child_strings()

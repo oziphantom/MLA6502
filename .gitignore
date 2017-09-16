@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.pyc
+TestFiles/Test1.html
+TestFiles/Test1.mla
+TestFiles/Test2.html
+TestFiles/Test2.mla

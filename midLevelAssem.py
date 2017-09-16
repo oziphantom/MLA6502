@@ -64,7 +64,7 @@ class MLAPair:
             first_token_end = word
             self.word = True
 
-        self.dest_original = line[1:first_token_end].strip()
+        self.dest_original = line[2:first_token_end].strip()
         self.src_original = line[equals+1:comment].strip()
         self.src_immediate = self.src_original.startswith("#")
 
@@ -108,29 +108,29 @@ class MLAPair:
 
 
 def is_valid_line(line):
-    if line.startswith('!'):
+    if line.startswith("!!"):
         if line.find('=') > 0:
             return True
         safe = line.strip().lower()
-        if safe == '!x':
+        if safe == '!!x':
             return True
-        if safe == '!y':
+        if safe == '!!y':
             return True
-        if safe == '!xy':
+        if safe == '!!xy':
             return True
-        if safe == '!yx':
+        if safe == '!!yx':
             return True
     return False
 
 def is_line_index_prehibit(line):
     safe = strip_lower_remove_comment(line)
-    if safe == '!x':
+    if safe == '!!x':
         return True
-    if safe == '!y':
+    if safe == '!!y':
         return True
-    if safe == '!xy':
+    if safe == '!!xy':
         return True
-    if safe == '!yx':
+    if safe == '!!yx':
         return True
     return False
 
@@ -143,13 +143,13 @@ def strip_lower_remove_comment(line):
 
 def get_prehib_enum_for_line(line):    
     safe = strip_lower_remove_comment(line)
-    if safe == '!x':
+    if safe == '!!x':
         return MLAIndexPrehib.x
-    if safe == '!y':
+    if safe == '!!y':
         return MLAIndexPrehib.y
-    if safe == '!xy':
+    if safe == '!!xy':
         return MLAIndexPrehib.xy
-    if safe == '!yx':
+    if safe == '!!yx':
         return MLAIndexPrehib.xy
     return MLAIndexPrehib.none
 
@@ -564,7 +564,7 @@ def convert_if_line(line, segmentDM, tdm):
 
 def getOperatorTokens2(line,operator):
     parts = line.split(operator)
-    var = parts[0].strip()[1:] # remove the !
+    var = parts[0].strip()[2:] # remove the !!
     value = parts[1].strip()
     if ";" in value:
         value = value[0:value.find(";")].strip()
@@ -572,7 +572,7 @@ def getOperatorTokens2(line,operator):
 
 def getOperatorTokens3(line,operator):
     parts = line.split(operator)
-    var = parts[0].strip()[1:] # remove the !
+    var = parts[0].strip()[2:] # remove the !!
     value = parts[1].strip()
     if ";" in value:
         value = value[0:value.find(";")].strip()

@@ -173,9 +173,12 @@ class TassParser(object):
 
 try:
     inputFile = sys.argv[1]
-    outputFile = inputFile[:-3]+"mla"
+    tassArgsFile = None
+    if len(sys.argv) > 2:
+        tassArgsFile = sys.argv[2]
+    outputFile = inputFile[:inputFile.rfind('.')+1]+"mla"
 
-    pylog.open(inputFile[:-3]+"log")
+    pylog.open(inputFile[:-3]+"html")
 
     tp = TassParser()
     tp.parse_lines(inputFile)
@@ -198,12 +201,15 @@ try:
         line.resolve_all_sub_names(block_assign_lines_to_evaluate)
 
     TDM = tassDefineManager.TassDefineManager()
-    tass_args_to_evaluate = TDM.parse_from_tass_args_file("D:\\pathstuff\\tassargs.arg")
+    tass_args_to_evaluate = None
+    if tassArgsFile != None:
+        tass_args_to_evaluate = TDM.parse_from_tass_args_file(tassArgsFile)
 
     TDM.parse_from_classified_lines(weak_block_assign_to_evaluate)
     pylog.write_log("Weak Values")
     pylog.write_dic(TDM.variables)
-    TDM.parse_from_classified_lines(tass_args_to_evaluate)
+    if tass_args_to_evaluate != None:
+        TDM.parse_from_classified_lines(tass_args_to_evaluate)
     pylog.write_log("Command line Values")
     pylog.write_dic(TDM.variables)
     TDM.parse_from_classified_lines(block_assign_lines_to_evaluate)
@@ -223,7 +229,7 @@ try:
 
     with open(outputFile, "w") as output:
         tp.write_out_file(output)
-        output.write("\n; MID LEVEL DATA SEGMNETS\n")
+        output.write("\n; MID LEVEL DATA SEGMENTS\n")
         SDM.write_segements_to_file(output)
 except ValueError as err:
     print(repr(err))

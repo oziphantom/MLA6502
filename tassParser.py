@@ -176,7 +176,7 @@ try:
     tassArgsFile = None
     if len(sys.argv) > 2:
         tassArgsFile = sys.argv[2]
-    outputFile = inputFile[:-3]+"mla"
+    outputFile = inputFile[:inputFile.rfind('.')+1]+"mla"
 
     pylog.open(inputFile[:-3]+"html")
 
@@ -229,7 +229,7 @@ try:
 
     with open(outputFile, "w") as output:
         tp.write_out_file(output)
-        output.write("\n; MID LEVEL DATA SEGMNETS\n")
+        output.write("\n; MID LEVEL DATA SEGMENTS\n")
         SDM.write_segements_to_file(output)
 except ValueError as err:
     print(repr(err))

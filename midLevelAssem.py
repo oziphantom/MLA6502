@@ -52,7 +52,7 @@ class MLAPair:
         self.word = False
         self.src_immediate = False
 
-    def make_pair(self,line,tdm):
+    def make_pair(self, line, tdm):
         line = line.strip()
         equals = line.find('=')
         comment = line.find(';')
@@ -163,7 +163,7 @@ def get_index_letter_for_prehib(prehib):
     return "f" #for fail
 
 def get_line_class(line):
-    if line.strip().startswith("!if"):
+    if line.strip().startswith("!!if"):
         return MLALineClass.if_comp
     if ("+=" in line or
             "-=" in line or

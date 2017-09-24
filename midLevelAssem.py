@@ -1,4 +1,4 @@
-import assemNumHelper
+from assemNumHelper import AssemNumHelper
 import segmentDataManager
 import tassDefineManager
 from enum import Enum
@@ -109,9 +109,9 @@ class MLAPair:
         if self.run:
             self.src = self.src_original
         else:    
-            self.src = tdm.lookupValueFor(self.src_original)
+            self.src = tdm.lookup_value_for(self.src_original)
 
-        self.dest = tdm.lookupValueFor(self.dest_original)
+        self.dest = tdm.lookup_value_for(self.dest_original)
 
 
 def is_valid_line(line):
@@ -307,7 +307,7 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
         if spec.special_mode == MLASpecial.neg:
             value = 0
             for num in numbers:
-                if assemNumHelper.is_number_negative(num):
+                if AssemNumHelper.is_number_negative(num):
                     found = True
                     value = num
                     break
@@ -320,7 +320,7 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
         elif spec.special_mode == MLASpecial.pos:
             value = 0
             for num in numbers:
-                if assemNumHelper.is_number_positive(num):
+                if AssemNumHelper.is_number_positive(num):
                     found = True
                     value = num
                     break
@@ -456,8 +456,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.equal
         params = get_if_tokens3(line, "==")
         macro = "#ISAEqualTo"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting == #0 to =0")
@@ -468,8 +468,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.not_equal
         params = get_if_tokens3(line, "!=")
         macro = "#ISANotEqualTo"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting != #0 to !0")
@@ -480,8 +480,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.less_than
         params = get_if_tokens3(line, ">=")
         macro = "#ISAGTE"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 128:
                     pylog.write_log("converting >= #128 to =+")
@@ -497,8 +497,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.greater_than
         params = get_if_tokens3(line, "<=")
         macro = "#ISALTE"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 127:
                     pylog.write_log("converting <= #127 to =-")
@@ -514,8 +514,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.greater_than_equal_to
         params = get_if_tokens3(line, ">")
         macro = "#ISAGT"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 127:
                     pylog.write_log("converting > #127 to =+")
@@ -531,8 +531,8 @@ def convert_if_line(line, segmentDM, tdm):
         operator = MLAOperator.less_than_equal_to
         params = get_if_tokens3(line, "<")
         macro = "#ISALT"
-        if assemNumHelper.is_immediate(params[1]):
-            value = tdm.lookupValueFor(params[1])
+        if AssemNumHelper.is_immediate(params[1]):
+            value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 128:
                     pylog.write_log("converting < #128 to =-")

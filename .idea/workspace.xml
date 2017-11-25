@@ -14,8 +14,8 @@
       <file leaf-file-name="tassParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tassParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4925">
-              <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="232" column="46" lean-forward="false" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="46" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -23,11 +23,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assemNumHelper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="midLevelAssem.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1094">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#3238#3573#0" expanded="false" />
+                <element signature="e#3614#3840#0" expanded="false" />
+                <element signature="e#3885#4010#0" expanded="false" />
+                <element signature="e#4053#4343#0" expanded="false" />
+                <element signature="e#4391#4578#0" expanded="false" />
+                <element signature="e#5109#5171#0" expanded="false" />
+                <element signature="e#5209#5398#0" expanded="false" />
+                <element signature="e#5454#6482#0" expanded="false" />
+                <element signature="e#6566#13690#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assemNumHelper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assemNumHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="440">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tassIFBlockResolver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tassIFBlockResolver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tassLineGroup.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tassLineGroup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tassDefineManager.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyLog.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyLog.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -36,76 +98,10 @@
       <file leaf-file-name="test_assemNumHelper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_assemNumHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="547">
+              <caret line="69" column="8" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="24" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pyLog.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyLog.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="midLevelAssem.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11700">
-              <caret line="472" column="25" lean-forward="false" selection-start-line="472" selection-start-column="15" selection-end-line="472" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tassDefineManager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
-              <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test2.mla" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestFiles/Test2.mla">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test2.asm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestFiles/Test2.asm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tassDefineLine.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tassDefineLine.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,7 +130,17 @@
       <find>invalid literal for int()</find>
       <find>parse_from_tass_args_file</find>
       <find>divmod</find>
+      <find>line</find>
+      <find>fully_colapsed</find>
+      <find>is_equation</find>
+      <find>evaluating</find>
+      <find>assemNumHelper</find>
+      <find>resolveIFBlock</find>
+      <find>is</find>
     </findStrings>
+    <replaceStrings>
+      <replace>fully_collapsed</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,22 +150,27 @@
       <list>
         <option value="$PROJECT_DIR$/TestFiles/Test1.asm" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/tassLineGroup.py" />
         <option value="$PROJECT_DIR$/TestFiles/Test1.mla" />
-        <option value="$PROJECT_DIR$/tassParser.py" />
         <option value="$PROJECT_DIR$/TestFiles/Test2.asm" />
-        <option value="$PROJECT_DIR$/tassDefineManager.py" />
-        <option value="$PROJECT_DIR$/midLevelAssem.py" />
         <option value="$PROJECT_DIR$/assemNumHelper.py" />
         <option value="$PROJECT_DIR$/test_assemNumHelper.py" />
+        <option value="$PROJECT_DIR$/TestFiles/tassParser_parselines1.asm" />
+        <option value="$PROJECT_DIR$/test_tassParser.py" />
+        <option value="$PROJECT_DIR$/tassLineGroup.py" />
+        <option value="$PROJECT_DIR$/test_tassLineGroup.py" />
+        <option value="$PROJECT_DIR$/tassDefineLine.py" />
+        <option value="$PROJECT_DIR$/midLevelAssem.py" />
+        <option value="$PROJECT_DIR$/tassIFBlockResolver.py" />
+        <option value="$PROJECT_DIR$/tassDefineManager.py" />
+        <option value="$PROJECT_DIR$/tassParser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1909" />
-    <option name="y" value="-1107" />
-    <option name="width" value="1942" />
-    <option name="height" value="1062" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -176,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -193,12 +205,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/Python3/python.exe" />
-    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MLA6502_dev" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -220,34 +231,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_assemNumHelper.py">
-    <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Hunters">
+    <configuration name="Hunters" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Chrono\AppData\Local\Programs\Python\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MLA6502" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_assemNumHelper.TestAssemNumHelper&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="MLA6502" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tassParser.py" />
+      <option name="PARAMETERS" value="D:\GitHub\thalamoose\huntersmoon\hunter_moon.asm D:\pathstuff\tassargs.arg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_negative" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -277,6 +277,21 @@
       <option name="_new_target" value="&quot;test_assemNumHelper.TestAssemNumHelper.test_is_number_positive&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
+    <configuration name="Unittests in MLA6502" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MLA6502" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <configuration name="Unittests in test_assemNumHelper.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,6 +304,20 @@
       <module name="MLA6502" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test_assemNumHelper.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration name="Unittests in test_tassLineGroup.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MLA6502" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_tassLineGroup.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration name="tassParser Test2 2" type="PythonConfigurationType" factoryName="Python">
@@ -325,27 +354,49 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Python.tassParser Test2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.tassParser Test2 2" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_negative" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_positive" />
-      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittests in test_assemNumHelper.py" />
+    <configuration name="test_tassLineGroup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MLA6502" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_tassLineGroup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="9">
+      <item index="0" class="java.lang.String" itemvalue="Python.Hunters" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tassParser Test2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.tassParser Test2 2" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in MLA6502" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test_tassLineGroup" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_negative" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_positive" />
+      <item index="7" class="java.lang.String" itemvalue="Python tests.Unittests in test_assemNumHelper.py" />
+      <item index="8" class="java.lang.String" itemvalue="Python tests.Unittests in test_tassLineGroup.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_assemNumHelper.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_positive" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_negative" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_tassLineGroup.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_tassLineGroup" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_assemNumHelper.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_positive" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_assemNumHelper.TestAssemNumHelper.test_is_number_negative" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -358,18 +409,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_assemNumHelper_TestAssemNumHelper - 2017.09.25 at 00h 00m 11s.xml">
-      <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_assemNumHelper_TestAssemNumHelper - 2017.09.25 at 00h 01m 59s.xml">
-      <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_assemNumHelper_TestAssemNumHelper_test_convert_equation_to_python - 2017.09.24 at 23h 55m 37s.xml">
-      <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper.test_convert_equation_to_python" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_assemNumHelper_TestAssemNumHelper_test_get_invalid_value - 2017.09.24 at 23h 58m 50s.xml">
-      <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_assemNumHelper_TestAssemNumHelper_test_get_invalid_value - 2017.09.25 at 00h 01m 22s.xml">
       <configuration name="Unittests for test_assemNumHelper.TestAssemNumHelper.test_get_invalid_value" configurationId="tests" />
     </history-entry>
@@ -388,28 +427,40 @@
     <history-entry file="Unittests_in_test_assemNumHelper_py - 2017.09.25 at 00h 04m 16s.xml">
       <configuration name="Unittests in test_assemNumHelper.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_tassLineGroup_py - 2017.10.17 at 01h 34m 42s.xml">
+      <configuration name="Unittests in test_tassLineGroup.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_tassLineGroup_py - 2017.10.17 at 01h 37m 17s.xml">
+      <configuration name="Unittests in test_tassLineGroup.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_tassLineGroup_py - 2017.10.17 at 02h 51m 41s.xml">
+      <configuration name="Unittests in test_tassLineGroup.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_tassLineGroup_py - 2017.10.17 at 02h 52m 56s.xml">
+      <configuration name="Unittests in test_tassLineGroup.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1909" y="-1107" width="1942" height="1062" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44962883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989011" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -421,6 +472,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="python-exception">
+          <properties notifyOnlyOnFirst="true" exception="builtins.ValueError">
+            <option name="notifyOnlyOnFirst" value="true" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -431,103 +490,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestFiles/Test2.asm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tassDefineLine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13900">
-          <caret line="556" column="27" lean-forward="true" selection-start-line="556" selection-start-column="27" selection-end-line="556" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tassParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4200">
-          <caret line="177" column="17" lean-forward="false" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyLog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4950">
-          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestFiles/Test2.mla">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestFiles/Test2.asm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tassDefineLine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15875">
-          <caret line="635" column="78" lean-forward="false" selection-start-line="635" selection-start-column="78" selection-end-line="635" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tassParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4200">
@@ -551,7 +518,15 @@
         <state relative-caret-position="1550">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#3238#3573#0" expanded="false" />
+            <element signature="e#3614#3840#0" expanded="false" />
+            <element signature="e#3885#4010#0" expanded="false" />
+            <element signature="e#4053#4343#0" expanded="false" />
+            <element signature="e#4391#4578#0" expanded="false" />
+            <element signature="e#5109#5171#0" expanded="false" />
+            <element signature="e#5209#5398#0" expanded="false" />
+            <element signature="e#5454#6482#0" expanded="false" />
+            <element signature="e#6566#13690#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -560,9 +535,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4950">
           <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,7 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,9 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,9 +589,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4800">
           <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,7 +598,15 @@
         <state relative-caret-position="14350">
           <caret line="578" column="29" lean-forward="true" selection-start-line="578" selection-start-column="29" selection-end-line="578" selection-end-column="29" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#3238#3573#0" expanded="false" />
+            <element signature="e#3614#3840#0" expanded="false" />
+            <element signature="e#3885#4010#0" expanded="false" />
+            <element signature="e#4053#4343#0" expanded="false" />
+            <element signature="e#4391#4578#0" expanded="false" />
+            <element signature="e#5109#5171#0" expanded="false" />
+            <element signature="e#5209#5398#0" expanded="false" />
+            <element signature="e#5454#6482#0" expanded="false" />
+            <element signature="e#6566#13690#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -664,9 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
           <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +648,15 @@
         <state relative-caret-position="2737">
           <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#3238#3573#0" expanded="false" />
+            <element signature="e#3614#3840#0" expanded="false" />
+            <element signature="e#3885#4010#0" expanded="false" />
+            <element signature="e#4053#4343#0" expanded="false" />
+            <element signature="e#4391#4578#0" expanded="false" />
+            <element signature="e#5109#5171#0" expanded="false" />
+            <element signature="e#5209#5398#0" expanded="false" />
+            <element signature="e#5454#6482#0" expanded="false" />
+            <element signature="e#6566#13690#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -711,58 +692,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tassLineGroup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python35/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python35/Lib/sre_parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tassDefineLine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python35/Lib/enum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="263" column="0" lean-forward="false" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python35/Lib/_bootlocale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python35/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Python/Python35/Lib/re.py" />
+    <entry file="file://D:/Python/Python35/Lib/sre_parse.py" />
+    <entry file="file://D:/Python/Python35/Lib/enum.py" />
+    <entry file="file://D:/Python/Python35/Lib/_bootlocale.py" />
+    <entry file="file://D:/Python/Python35/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/TestFiles/Test2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -772,32 +706,153 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestFiles/Test2.asm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="66">
           <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestFiles/Test2.mla">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="132">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-774922249/builtins.py" />
+    <entry file="file://D:/Karen Backup/Samples/Page1_Phase3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestFiles/tassParser_parselines1.asm" />
+    <entry file="file://$PROJECT_DIR$/test_tassLineGroup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="85" column="23" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tassParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/enum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/sre_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="243" column="52" lean-forward="true" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MLA6502_tasstests/if_negative.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MLA6502_tasstests/if_equal_immed.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tassDefineLine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_assemNumHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="69" column="8" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyLog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="305">
+          <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assemNumHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tassLineGroup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tassIFBlockResolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1094">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#3238#3573#0" expanded="false" />
+            <element signature="e#3614#3840#0" expanded="false" />
+            <element signature="e#3885#4010#0" expanded="false" />
+            <element signature="e#4053#4343#0" expanded="false" />
+            <element signature="e#4391#4578#0" expanded="false" />
+            <element signature="e#5109#5171#0" expanded="false" />
+            <element signature="e#5209#5398#0" expanded="false" />
+            <element signature="e#5454#6482#0" expanded="false" />
+            <element signature="e#6566#13690#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tassParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4925">
-          <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        <state relative-caret-position="283">
+          <caret line="232" column="46" lean-forward="false" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="46" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
@@ -806,45 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-774922249/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="130" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11700">
-          <caret line="472" column="25" lean-forward="false" selection-start-line="472" selection-start-column="15" selection-end-line="472" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_assemNumHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assemNumHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="217">
+          <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
           <folding />
         </state>
       </provider>

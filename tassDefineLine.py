@@ -8,9 +8,9 @@ class TassDefineLine:
         self.full_string = ""
         self.name = ""
         self.RHS = ""
-        self.int_value = assemNumHelper.get_invalid_value()
+        self.int_value = assemNumHelper.AssemNumHelper.get_invalid_value()
         self.fully_expanded = False
-        self.resoved = False
+        self.resolved = False
         self.cant_be_resolved = False
         self.prefix = ""
         self.is_string = False

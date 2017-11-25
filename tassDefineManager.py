@@ -119,17 +119,28 @@ class TassDefineManager:
 
     @staticmethod
     def do_replacements_in(replacements, parent):
+        pylog.write_log("doing replacements")
         for block in replacements:
+            pylog.write_block_string(block)
             replace = replacements[block]
             idx = parent.index(block)
             if len(replace) > 0:
-                new_group = TassLineGroup()
                 if isinstance(replace[0], str):
-                    new_group.type = TassLineGroupType.not_special
-                else:
-                    new_group.type = replace[0].type
-                new_group.children = replace
-                parent[idx] = new_group
+                    new_group = TassLineGroup()
+                    for item in replace:
+                        new_group.add_child(item)
+                    pylog.write_log("found string")
+                    new_group.type = TassLineGroup.identify_line(replace[0])
+                    pylog.write_log("identified as " + str(new_group.type))
+                    replace = new_group
+                # else:
+                #     pylog.write_log("this is a group of type " + str(replace[0].type))
+                #     new_group.type = replace[0].type
+                #new_group.children = replace
+                #parent[idx] = new_group
+                parent[idx:idx+1] = replace
+                # pylog.write_log("replacing with")
+                # pylog.write_block_string(replace)
             else:
                 del parent[idx]
     
@@ -146,30 +157,32 @@ class TassDefineManager:
                     if not block.is_child_string(0):
                         counter += self.resolve_if_blocks(block.children)
         counter += len(replacements)
-        self.do_replacements_in(replacements, classified_lines)
+        if len(replacements) > 0:
+            self.do_replacements_in(replacements, classified_lines)
         return counter
 
     def resolve_mid_level_blocks(self, parent, segment_dm):
         replacements = {}
         counter = 0
         for block in parent:
-            if block.type == TassLineGroupType.midlevel:
-                # get the strings out of this block
-                strings = block.get_all_child_strings()
-                # mid level parse it
-                out = midLevelAssem.convert_lines_to_asm(strings, segment_dm, self)
-                pylog.write_log("<code><table><tr><td>")
-                for s in strings:
-                    pylog.write_log(s)
-                pylog.write_log("</td><td>")
-                for l in out:
-                    pylog.write_log(l)
-                pylog.write_log("</td></tr></table></code>")
-                # replace it
-                replacements[block] = out
-            elif TassLineGroup.get_does_type_make_sub_blocks(block.type):
-                if not block.is_child_string(0):
-                    counter += self.resolve_mid_level_blocks(block.children, segment_dm)
+            if not isinstance(block, str):
+                if block.type == TassLineGroupType.midlevel:
+                    # get the strings out of this block
+                    strings = block.get_all_child_strings()
+                    # mid level parse it
+                    out = midLevelAssem.convert_lines_to_asm(strings, segment_dm, self)
+                    pylog.write_log("<code><table><tr><td>")
+                    for s in strings:
+                        pylog.write_log(s)
+                    pylog.write_log("</td><td>")
+                    for l in out:
+                        pylog.write_log(l)
+                    pylog.write_log("</td></tr></table></code>")
+                    # replace it
+                    replacements[block] = out
+                elif TassLineGroup.get_does_type_make_sub_blocks(block.type):
+                    if not block.is_child_string(0):
+                        counter += self.resolve_mid_level_blocks(block.children, segment_dm)
         counter += len(replacements)
         self.do_replacements_in(replacements, parent)
         return counter
@@ -180,7 +193,9 @@ class TassDefineManager:
 
         if value.startswith("#"):
             value = value[1:]  # remove the #
-            
+        if "," in value:
+            value = value.split(",")[0]
+
         if AssemNumHelper.is_hex(value):
             value = AssemNumHelper.get_int_from_hex(value)
             found = True

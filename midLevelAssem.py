@@ -619,7 +619,7 @@ def getOperatorTokens3(line, operator):
             values[1] = values[1]+","+second
             found = True
         if not found:
-            pylog.write_log("invalid format for ",line)
+            pylog.write_log("invalid format for " + line)
     elif len(values) == 4:
             values[0] = values[0]+","+values[1]
             values[1] = values[2]+","+values[3]

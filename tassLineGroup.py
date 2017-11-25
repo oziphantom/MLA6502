@@ -1,6 +1,7 @@
 from enum import Enum
 import re
 
+
 class TassLineGroupType(Enum):
     not_special = 0
     weak = 1
@@ -31,7 +32,8 @@ class TassLineGroupType(Enum):
     function = 26
     end_function = 27
 
-                #string, id, start(0) or contains(1),not sub(0) makes sub(1)
+
+                    # string, id, start(0) or contains(1),not sub(0) makes sub(1)
 g_lineIDstrings = [[".weak", TassLineGroupType.weak, 0, 1],
                    [".if", TassLineGroupType.if_block, 0, 1],
                    [".block", TassLineGroupType.block, 1, 1],
@@ -69,11 +71,13 @@ g_regex_Preprocess_assign = re.compile(r"^\s*[A-Z0-9_]+[\s]*={1}[\s]*[$%]{0,1}[a
 g_regex_assign = re.compile(r"^\s*[a-zA-Z0-9_]+[\s]*={1}[\s]*[$%]{0,1}[a-zA-Z0-9_\"]+")
 g_dont_expand_if = [TassLineGroupType.macro, TassLineGroupType.segment, TassLineGroupType.function]
 
+
 class TassLineGroup(object):
+
     def __init__(self):
         self.type = TassLineGroupType.not_special
         self.children = []
-        self.fully_colapsed = False
+        self.fully_collapsed = False
 
     def __iter__(self):
         return iter(self.children)
@@ -82,12 +86,26 @@ class TassLineGroup(object):
         return next(self.children)
 
     def add_child(self, child):
+        """
+        This will add a string or another TassLineGroup as a child
+        :param child: string or TassLineGroup
+        """
         self.children.append(child)
 
     def is_child_string(self, x):
+        """
+        This will check if child x is a string object
+        :param x: the child to check
+        :return: bool, if it is a string or not
+        """
         return isinstance(self.children[x], str)
 
     def get_all_child_strings(self):
+        """
+        This will run through all children and recurse through sub children
+        returning all strings in order in a list
+        :return: list of string
+        """
         strings = []
         for c in self.children:
             if isinstance(c, str):
@@ -97,7 +115,13 @@ class TassLineGroup(object):
         return strings
 
     def should_evaluate_if(self):
-        return not self.type in g_dont_expand_if
+        """
+        This will check to see if this line should allow and children ifs to be evaulated.
+        This is to stop macro based ifs which work on params from getting trashed by the praser
+        that doesn't understand them. As Macros should not contain MLA code this should not be an issue.
+        :return: bool, if it does allow ifs to be evaluated
+        """
+        return self.type not in g_dont_expand_if
 
     @staticmethod
     def type_allows_runs(group_type):

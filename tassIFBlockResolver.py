@@ -5,11 +5,13 @@ from pyLog import pylog
 from enum import Enum
 import assemNumHelper
 
+
 class IFBlockState(Enum):
     enter = 0
     copy_to_else_end = 1
     ditch_till_end = 2
     ditch_till_else_end = 3
+
 
 class TassIFBlockResolver:
     def resolveIFBlock(self, block, python_variables):
@@ -25,8 +27,10 @@ class TassIFBlockResolver:
             block_type = child.type
             if state == IFBlockState.enter:
                 if (block_type == TassLineGroupType.if_block or
-                    block_type == TassLineGroupType.if_else):
+                   block_type == TassLineGroupType.if_else):
                     expr = child.children[0].strip()
+                    if expr == ".if DEBUG_MENU_TITLESCREEN == 0":
+                        print("break")
                     first_dot = expr.find('.')
                     command_len = 3
                     if ".elsif" in expr:
@@ -35,17 +39,17 @@ class TassIFBlockResolver:
                     pylog.write_log("evaluating "+expr_no_if)
                     result = False
                     try:
-                        value = assemNumHelper.convert_equation_to_python(expr_no_if).lower()
+                        value = assemNumHelper.AssemNumHelper.convert_equation_to_python(expr_no_if).lower()
                         result = eval(value, python_variables)
-                        found = True
+                        # found = True
                     except Exception as e:
                         pass
                     pylog.write_log(str(result))
                     if result:
-                        #if true, keep all until we hit an end
+                        # if true, keep all until we hit an end
                         state = IFBlockState.copy_to_else_end
                     else:
-                        #if false, ditch until we hit an else or end
+                        # if false, ditch until we hit an else or end
                         state = IFBlockState.ditch_till_else_end
 
             elif state == IFBlockState.copy_to_else_end:
@@ -55,16 +59,16 @@ class TassIFBlockResolver:
                 elif block_type == TassLineGroupType.end_if:
                     state = IFBlockState.enter
                 else:
-                    replacement += child
+                    replacement.extend([child])
             elif state == IFBlockState.ditch_till_end:
                 if block_type == TassLineGroupType.end_if:
                     state = IFBlockState.enter
             elif state == IFBlockState.ditch_till_else_end:
                 if block_type == TassLineGroupType.if_else:
                     state = IFBlockState.enter
-                    i -= 1 #so we revist this node in the enter to do the IF
+                    i -= 1  # so we vist this node again in the enter to do the IF
                 elif block_type == TassLineGroupType.just_else:
-                    state = IFBlockState.copy_to_else_end # this is an else we need to take
+                    state = IFBlockState.copy_to_else_end  # this is an else we need to take
                     pylog.write_log("taking else")
                 elif block_type == TassLineGroupType.end_if:
                     state = IFBlockState.enter

@@ -59,6 +59,8 @@ class MLAPair:
         self.special_mode = MLASpecial.not_special
         self.word = False
         self.src_immediate = False
+        self.dest_suitable_to_evaluate = True
+        self.src_suitable_to_evaluate = True
 
     def make_pair(self, line, tdm):
         line = line.strip()
@@ -103,15 +105,21 @@ class MLAPair:
             if count > 2:
                 self.run = True
             elif count == 2:
-                if not (subs[1] == 'x' or
-                        subs[1] == 'y'):
+                index_check = subs[1].lower()
+                is_index = index_check == 'x' or index_check == 'y'
+                if not is_index:
                     self.run = True
+                    self.src_suitable_to_evaluate = False
         if self.run:
             self.src = self.src_original
         else:    
             self.src = tdm.lookup_value_for(self.src_original)
-
-        self.dest = tdm.lookup_value_for(self.dest_original)
+        if (",x" in self.dest_original.lower() or
+           ",y" in self.dest_original.lower()):
+            self.dest_suitable_to_evaluate = False
+            self.dest = self.dest_original
+        else:
+            self.dest = tdm.lookup_value_for(self.dest_original)
 
 
 def is_valid_line(line):

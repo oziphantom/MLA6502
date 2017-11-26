@@ -1,8 +1,12 @@
 from assemNumHelper import AssemNumHelper
 import segmentDataManager
 import tassDefineManager
+from IfAsmBuilder import IfAsmBuilder
 from enum import Enum
 from pyLog import pylog
+import re
+
+g_if_bit = re.compile(r"(?i)!!if([axy])?\s+(not)?(.+)bit\s(.+)then(.+);(.+)?")
 
 # inputFile = "D:\\GitHub\\SquidJump\\squid.asm"
 # outputFile = "D:\\GitHub\\SquidJump\\squid.psm"
@@ -183,7 +187,8 @@ def get_index_letter_for_prehib(prehib):
 
 
 def get_line_class(line):
-    if line.strip().startswith("!!if"):
+    lower_line = line.lower()
+    if lower_line.strip().startswith("!!if"):
         return MLALineClass.if_comp
     if ("+=" in line or
             "-=" in line or
@@ -194,7 +199,7 @@ def get_line_class(line):
             "<<=" in line or
             "&|=" in line):
         return MLALineClass.operator
-    if is_line_index_prehibit(line):
+    if is_line_index_prehibit(lower_line):
         return MLALineClass.index_prohibited
     return MLALineClass.straight_assign
 
@@ -442,154 +447,136 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
 def get_if_tokens3(line, operator):
     then_split = line.split("then ")
     operator_split = then_split[0].split(operator)
+    lower_operator = operator_split[0].lower()
+    if_size = 4
+    if (lower_operator[4] == "x" or
+            lower_operator[4] == "y" or
+            lower_operator[4] == "a"):
+        if_size = 5
     branch = then_split[1].strip()
     value = operator_split[1].strip()
-    comparer = operator_split[0].strip()[4:]
+    comparer = operator_split[0][if_size:].strip()
     return [comparer, value, branch]
 
 
 def get_if_tokens2(line, operator):
     then_split = line.split("then ")
     operator_split = then_split[0].split(operator)
+    lower_operator = operator_split[0].lower()
+    if_size = 4
+    if (lower_operator[4] == "x" or
+                lower_operator[4] == "y" or
+                lower_operator[4] == "a"):
+        if_size = 5
     branch = then_split[1].strip()
-    comparer = operator_split[0].strip()[4:]
+    comparer = operator_split[0].strip()[if_size:]
     return [comparer, branch]
 
 
 def convert_if_line(line, segmentDM, tdm):
     operator = MLAOperator.unknown
     out_string = ""
-    macro = ""
+    register = "a"
+    line = line.strip()
+
+    lower_line = line.lower();
+    if lower_line.startswith("!!ifx"):
+        register = "x"
+    if lower_line.startswith("!!ify"):
+        register = "y"
+
     if "==" in line:
         operator = MLAOperator.equal
         params = get_if_tokens3(line, "==")
-        macro = "#ISAEqualTo"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting == #0 to =0")
                     operator = MLAOperator.zero
-                    macro = "#ISAZero"
                     params[1] = params[2]
     elif "!=" in line:
         operator = MLAOperator.not_equal
         params = get_if_tokens3(line, "!=")
-        macro = "#ISANotEqualTo"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting != #0 to !0")
                     operator = MLAOperator.not_zero
-                    macro = "#ISANotZero"
                     params[1] = params[2]
     elif ">=" in line:
-        operator = MLAOperator.less_than
+        operator = MLAOperator.greater_than_equal_to
         params = get_if_tokens3(line, ">=")
-        macro = "#ISAGTE"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 128:
                     pylog.write_log("converting >= #128 to =+")
                     operator = MLAOperator.positive
-                    macro = "#ISAPlus"
                     params[1] = params[2]
                 elif value == 1:
                     pylog.write_log("converting >= #1 to !0")
                     operator = MLAOperator.not_zero
-                    macro = "#ISANotZero"
                     params[1] = params[2]
     elif "<=" in line:
-        operator = MLAOperator.greater_than
+        operator = MLAOperator.less_than_equal_to
         params = get_if_tokens3(line, "<=")
-        macro = "#ISALTE"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 127:
                     pylog.write_log("converting <= #127 to =-")
                     operator = MLAOperator.negative
-                    macro = "#ISAMinus"
                     params[1] = params[2]
                 elif value <= 254:
                     pylog.write_log("converting <= #"+str(value)+"+1 to < #"+str(value)+"+1")
                     operator = MLAOperator.less_than
-                    macro = "#ISALT"
                     params[1] = params[1]+"+1"
     elif ">" in line:
-        operator = MLAOperator.greater_than_equal_to
+        operator = MLAOperator.greater_than
         params = get_if_tokens3(line, ">")
-        macro = "#ISAGT"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 127:
                     pylog.write_log("converting > #127 to =+")
                     operator = MLAOperator.positive
-                    macro = "#ISAPlus"
                     params[1] = params[2]
                 elif value <= 254:
                     pylog.write_log("converting > #"+str(value)+"+1 to >= #"+str(value)+"+1")
                     operator = MLAOperator.greater_than_equal_to
-                    macro = "#ISAGTE"
                     params[1] = params[1]+"+1"
     elif "<" in line:
-        operator = MLAOperator.less_than_equal_to
+        operator = MLAOperator.less_than
         params = get_if_tokens3(line, "<")
-        macro = "#ISALT"
         if AssemNumHelper.is_immediate(params[1]):
             value = tdm.lookup_value_for(params[1])
             if isinstance(value, int):
                 if value == 128:
                     pylog.write_log("converting < #128 to =-")
                     operator = MLAOperator.negative
-                    macro = "#ISAMinus"
-                    params[1] = params[2]                
+                    params[1] = params[2]
     elif "=0" in line:
         operator = MLAOperator.zero
         params = get_if_tokens2(line, "=0")
-        macro = "#ISAZero"
     elif "!0" in line:
         operator = MLAOperator.not_zero
         params = get_if_tokens2(line, "!0")
-        macro = "#ISANotZero"
     elif "=+" in line:
         operator = MLAOperator.positive
         params = get_if_tokens2(line, "=+")
-        macro = "#ISAPlus"
     elif "=-" in line:
         operator = MLAOperator.negative
         params = get_if_tokens2(line, "=-")
-        macro = "#ISAMinus"
 
     if operator == MLAOperator.unknown:
         print("unknown if statment found ", line)
     elif operator in g_2operatorList:  # 2 operators
-        if ",x" in params[0] or ",X" in params[0]:
-            out_string = ["\t"+macro+"iX "+params[0][:params[0].find(",")]+","+params[1]+"\n"]
-        elif ",y" in params[0] or ",Y" in params[0]:
-            out_string = ["\t"+macro+"iY "+params[0][:params[0].find(",")]+","+params[1]+"\n"]
-        else:
-            out_string = ["\t"+macro+" "+params[0]+","+params[1]+"\n"]
+        out_string = IfAsmBuilder.get_asm_string_for_if(operator, params[0], "N/A", params[1], register)
     else:  # 3 operators
-        if ",x" in params[0] or ",X" in params[0]:
-            params[0] = params[0][:params[0].find(",")]
-            macro += "iX"
-        if ",y" in params[0] or ",Y" in params[0]:
-            params[0] = params[0][:params[0].find(",")]
-            macro += "iY"
-        if ",x" in params[1] or ",X" in params[1]:
-            params[1] = params[1][:params[1].find(",")]
-            macro += "_iX"
-        if ",y" in params[1] or ",Y" in params[1]:
-            params[1] = params[1][:params[1].find(",")]
-            macro += "_iY"
-        if operator == MLAOperator.greater_than:
-            if "+" in params[2]:
-                print("ERROR > Operator can not have + as a branch target!")
-        out_string = ["\t"+macro+" "+params[0]+","+params[1]+","+params[2]+"\n"]
+        out_string = IfAsmBuilder.get_asm_string_for_if(operator, params[0], params[1], params[2], register)
+
     return out_string
 
 

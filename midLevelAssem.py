@@ -1,13 +1,21 @@
 from assemNumHelper import AssemNumHelper
 import segmentDataManager
 import tassDefineManager
+from random import shuffle
 from IfAsmBuilder import IfAsmBuilder
 from enum import Enum
 from pyLog import pylog
 import re
 
-g_if_bit = re.compile(r"(?i)!!if([axy])?\s+(not)?(.+)bit\s(.+)then(.+);(.+)?")
-
+g_if_bit = re.compile(r"(?i)\s*!!if\s+(not)?(.+)bit\s(.+)then(.+);?(.+)?")
+g_if = re.compile(r"(?i)!!if([axy])?\s+(.+)\s+(==|!=|>=|<=|>|<|=0|!0|=\+|=-)\s+(.+)?\s?then\s+([^;]+)(;.+)?")
+# !! A (w)= B <operator> C
+# group 1 : A
+# group 2 : w or None
+# group 3 : B
+# group 4 : operator
+# group 5 : C
+g_maths_assign = re.compile(r"!!{?([a-zA-Z0-9\s\+\-\*\\<>%&\^\|\$\(\)\[\]\.,]+)}?\s(w?)=\s{?([a-zA-Z0-9\s\+\-\*\\<>%&^|\$\(\)\[\]\.,]+)}?\s(\+|\-|<<|>>|\*|\\|\||\^|&)\s{?([a-zA-Z0-9\s\+\-\*\\<>%&#^|\$\(\)\[\]\.,]+)}?")
 # inputFile = "D:\\GitHub\\SquidJump\\squid.asm"
 # outputFile = "D:\\GitHub\\SquidJump\\squid.psm"
 # inputFile = "D:/GitHub/test/midLevel.asm"
@@ -25,7 +33,8 @@ class MLALineClass(Enum):
     straight_assign = 0
     if_comp = 1
     operator = 2
-    index_prohibited = 3
+    operator_assign = 3
+    index_prohibited = 4
 
 
 class MLAOperator(Enum):
@@ -199,6 +208,8 @@ def get_line_class(line):
             "<<=" in line or
             "&|=" in line):
         return MLALineClass.operator
+    if g_maths_assign.match(lower_line.strip()):
+        return MLALineClass.operator_assign
     if is_line_index_prehibit(lower_line):
         return MLALineClass.index_prohibited
     return MLALineClass.straight_assign
@@ -231,12 +242,17 @@ def convert_lines_to_asm(lines, segmentDM, tdm):
             if len(straights) > 0:
                 out_string += convert_straight_assignment_block_to_asm(straights, segmentDM, tdm, prehib)
                 straights = []
-            out_string += (convert_if_line(line, segmentDM, tdm))
+            out_string += convert_if_line(line, segmentDM, tdm)
         elif clas == MLALineClass.operator:
             if len(straights) > 0:
                 out_string += convert_straight_assignment_block_to_asm(straights, segmentDM, tdm, prehib)
                 straights = []
             out_string += convert_operator_line(line, segmentDM, tdm)
+        elif clas == MLALineClass.operator_assign:
+            if len(straights) > 0:
+                out_string += convert_straight_assignment_block_to_asm(straights, segmentDM, tdm, prehib)
+                straights = []
+            out_string += convert_operator_assign_line(line, segmentDM, tdm)
         elif clas == MLALineClass.index_prohibited:
             prehib = get_prehib_enum_for_line(line)
     if len(straights) > 0:
@@ -275,10 +291,10 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
             # make lo
             addPair(pairs, "#<"+local_src, thing.dest)
             # make hi
-            addPair(pairs, "#>"+local_src, str(thing.dest)+"+1")
+            addPair(pairs, "#>"+local_src, append_to_end_of_label_or_address(str(thing.dest), "+1"))
         else:  # nope its a word copy
             addPair(pairs, thing.src, thing.dest)
-            addPair(pairs, str(thing.src)+"+1", str(thing.dest)+"+1")
+            addPair(pairs, append_to_end_of_label_or_address(str(thing.src), "+1"), append_to_end_of_label_or_address(str(thing.dest), "+1"))
 
     index_letter = get_index_letter_for_prehib(prehib)
     # now we have a list of values that need to go to addresses
@@ -398,12 +414,13 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
                     break_run = True
                 number_safe.append(safe)
                 if break_run:
+                    # if current_run not in num_runs:
                     num_runs.append(current_run)
                     start = numbers[i]
                     current_run = [start]
                 
                 i += 1
-
+            # if current_run not in num_runs:
             num_runs.append(current_run)
 
             # check for a FF->0 wrap run
@@ -437,145 +454,114 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
                             out_string.append("\tst"+index_letter+" "+str(d)+"\n")
                         i += 1
 
-    for key in pairs:
+    randomKey = list(pairs)
+    shuffle(randomKey)
+    for key in randomKey:
         out_string.append("\tlda "+str(key)+"\n")
         for dest in pairs[key]:
             out_string.append("\tsta "+str(dest)+"\n")
     return out_string
 
 
-def get_if_tokens3(line, operator):
-    then_split = line.split("then ")
-    operator_split = then_split[0].split(operator)
-    lower_operator = operator_split[0].lower()
-    if_size = 4
-    if (lower_operator[4] == "x" or
-            lower_operator[4] == "y" or
-            lower_operator[4] == "a"):
-        if_size = 5
-    branch = then_split[1].strip()
-    value = operator_split[1].strip()
-    comparer = operator_split[0][if_size:].strip()
-    return [comparer, value, branch]
-
-
-def get_if_tokens2(line, operator):
-    then_split = line.split("then ")
-    operator_split = then_split[0].split(operator)
-    lower_operator = operator_split[0].lower()
-    if_size = 4
-    if (lower_operator[4] == "x" or
-                lower_operator[4] == "y" or
-                lower_operator[4] == "a"):
-        if_size = 5
-    branch = then_split[1].strip()
-    comparer = operator_split[0].strip()[if_size:]
-    return [comparer, branch]
-
-
 def convert_if_line(line, segmentDM, tdm):
+
+    if_bit_match = g_if_bit.match(line)
+    if if_bit_match:
+        return IfAsmBuilder.get_asm_string_for_if_bit(if_bit_match, tdm)
+    # normal IF
+    if_match = g_if.match(line.strip())
+    if not if_match:
+        print("unable to match if line " + line)
+        return "!!------- ERROR"
+
     operator = MLAOperator.unknown
     out_string = ""
     register = "a"
+    if if_match.group(1):
+        register = if_match.group(1)
     line = line.strip()
 
-    lower_line = line.lower();
-    if lower_line.startswith("!!ifx"):
-        register = "x"
-    if lower_line.startswith("!!ify"):
-        register = "y"
+    test = if_match.group(2)
+    operator_string = if_match.group(3)
+    comparator = if_match.group(4)
+    dest = if_match.group(5)
 
-    if "==" in line:
+    if "==" == operator_string:
         operator = MLAOperator.equal
-        params = get_if_tokens3(line, "==")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting == #0 to =0")
                     operator = MLAOperator.zero
-                    params[1] = params[2]
-    elif "!=" in line:
+    elif "!=" == operator_string:
         operator = MLAOperator.not_equal
-        params = get_if_tokens3(line, "!=")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 0:
                     pylog.write_log("converting != #0 to !0")
                     operator = MLAOperator.not_zero
-                    params[1] = params[2]
-    elif ">=" in line:
+    elif ">=" == operator_string:
         operator = MLAOperator.greater_than_equal_to
-        params = get_if_tokens3(line, ">=")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 128:
                     pylog.write_log("converting >= #128 to =+")
                     operator = MLAOperator.positive
-                    params[1] = params[2]
                 elif value == 1:
                     pylog.write_log("converting >= #1 to !0")
                     operator = MLAOperator.not_zero
-                    params[1] = params[2]
-    elif "<=" in line:
+    elif "<=" == operator_string:
         operator = MLAOperator.less_than_equal_to
-        params = get_if_tokens3(line, "<=")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 127:
                     pylog.write_log("converting <= #127 to =-")
                     operator = MLAOperator.negative
-                    params[1] = params[2]
                 elif value <= 254:
                     pylog.write_log("converting <= #"+str(value)+"+1 to < #"+str(value)+"+1")
                     operator = MLAOperator.less_than
-                    params[1] = params[1]+"+1"
-    elif ">" in line:
+                    comparator = comparator + "+1"
+    elif ">" == operator_string:
         operator = MLAOperator.greater_than
-        params = get_if_tokens3(line, ">")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 127:
-                    pylog.write_log("converting > #127 to =+")
-                    operator = MLAOperator.positive
-                    params[1] = params[2]
+                    pylog.write_log("converting > #127 to =-")
+                    operator = MLAOperator.negative
                 elif value <= 254:
                     pylog.write_log("converting > #"+str(value)+"+1 to >= #"+str(value)+"+1")
                     operator = MLAOperator.greater_than_equal_to
-                    params[1] = params[1]+"+1"
-    elif "<" in line:
+                    comparator = comparator + "+1"
+    elif "<" == operator_string:
         operator = MLAOperator.less_than
-        params = get_if_tokens3(line, "<")
-        if AssemNumHelper.is_immediate(params[1]):
-            value = tdm.lookup_value_for(params[1])
+        if AssemNumHelper.is_immediate(comparator):
+            value = tdm.lookup_value_for(comparator)
             if isinstance(value, int):
                 if value == 128:
-                    pylog.write_log("converting < #128 to =-")
-                    operator = MLAOperator.negative
-                    params[1] = params[2]
-    elif "=0" in line:
+                    pylog.write_log("converting < #128 to =+")
+                    operator = MLAOperator.positive
+    elif "=0" == operator_string:
         operator = MLAOperator.zero
-        params = get_if_tokens2(line, "=0")
-    elif "!0" in line:
+    elif "!0" == operator_string:
         operator = MLAOperator.not_zero
-        params = get_if_tokens2(line, "!0")
-    elif "=+" in line:
+    elif "=+" == operator_string:
         operator = MLAOperator.positive
-        params = get_if_tokens2(line, "=+")
-    elif "=-" in line:
+        register = if_match.group(1)  # the none case is important here
+    elif "=-" == operator_string:
         operator = MLAOperator.negative
-        params = get_if_tokens2(line, "=-")
+        register = if_match.group(1)  # the none case is important here
 
     if operator == MLAOperator.unknown:
-        print("unknown if statment found ", line)
+        print("unknown if statement found ", line)
     elif operator in g_2operatorList:  # 2 operators
-        out_string = IfAsmBuilder.get_asm_string_for_if(operator, params[0], "N/A", params[1], register)
+        out_string = IfAsmBuilder.get_asm_string_for_if(operator, test, "N/A", dest, register)
     else:  # 3 operators
-        out_string = IfAsmBuilder.get_asm_string_for_if(operator, params[0], params[1], params[2], register)
+        out_string = IfAsmBuilder.get_asm_string_for_if(operator, test, comparator, dest, register)
 
     return out_string
 
@@ -648,6 +634,128 @@ def convert_operator_line(line, segmentDM, tdm):
         parts = getOperatorTokens2(line, "<<=")
         out_string = ["\tlda " + parts[0] + "\n\t.rept " + parts[1] + "\n\tasl a\n\t.next\n\t sta " + parts[0]]
     return out_string
+
+
+def convert_operator_assign_line(line, segmentDM, tdm):
+    out_string = ""
+    match = g_maths_assign.match(line.strip())
+    dest = match.group(1)
+    word = match.group(2)
+    src = match.group(3)
+    operator = match.group(4)
+    param = match.group(5)
+    if not word:
+        if operator == "+":
+            out_string = "\tlda " + src + "\n\tclc\n\tadc " + param + "\n\tsta " + dest + "\n"
+        elif operator == "-":
+            out_string = "\tlda " + src + "\n\tsec\n\tsbc " + param + "\n\tsta " + dest + "\n"
+        elif operator == ">>":
+            out_string = "\tlda " + src + "\n\t.rept " + param + "\n\tlsr a\n\t.next\n\tsta " + dest + "\n"
+        elif operator == "<<":
+            out_string = "\tlda " + src + "\n\t.rept " + param + "\n\tasl a\n\t.next\n\tsta " + dest + "\n"
+        elif operator == "^":
+            out_string = "\tlda " + src + "\n\teor " + param + "\n\tsta " + dest + "\n"
+        elif operator == "|":
+            out_string = "\tlda " + src + "\n\tora " + param + "\n\tsta " + dest + "\n"
+        elif operator == "&":
+            out_string = "\tlda " + src + "\n\tand " + param + "\n\tsta " + dest + "\n"
+        return out_string
+    else:  # then we have 16 bit versions
+        if AssemNumHelper.is_immediate(param):
+            if operator == "+":
+                out_string = "\tlda " + src + "\n" \
+                             "\tclc\n" \
+                             "\tadc #<" + param[1:] + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tadc #>" + param[1:] + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "-":
+                out_string = "\tlda " + src + "\n" \
+                             "\tsec\n" \
+                             "\tsbc #<" + param[1:] + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tsbc #>" + param[1:] + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == ">>":
+                out_string = "ERROR : 16 bit >> not supported"
+            elif operator == "<<":
+                out_string = "ERROR : 16 bit << not supported"
+            elif operator == "^":
+                out_string = "\tlda " + src + "\n" \
+                             "\teor #<" + param[1:] + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\teor #>" + param[1:] + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "|":
+                out_string = "\tlda " + src + "\n" \
+                             "\tora #<" + param[1:] + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tora #>" + param[1:] + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "&":
+                out_string = "\tlda " + src + "\n" \
+                             "\tand #<" + param[1:] + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tand #>" + param[1:] + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            return out_string
+        else:  # 16 bits not immediate
+            if operator == "+":
+                out_string = "\tlda " + src + "\n" \
+                             "\tclc\n" \
+                             "\tadc " + param + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tadc " + append_to_end_of_label_or_address(param, "+1") + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "-":
+                out_string = "\tlda " + src + "\n" \
+                             "\tsec\n" \
+                             "\tsbc " + param + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tsbc " + append_to_end_of_label_or_address(param, "+1") + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == ">>":
+                out_string = "ERROR : 16 bit >> not supported"
+            elif operator == "<<":
+                out_string = "ERROR : 16 bit << not supported"
+            elif operator == "^":
+                out_string = "\tlda " + src + "\n" \
+                             "\teor " + param + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\teor " + append_to_end_of_label_or_address(param, "+1") + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "|":
+                out_string = "\tlda " + src + "\n" \
+                             "\tora " + param + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tora " + append_to_end_of_label_or_address(param, "+1") + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            elif operator == "&":
+                out_string = "\tlda " + src + "\n" \
+                             "\tand " + param + "\n" \
+                             "\tsta " + dest + "\n" \
+                             "\tlda " + append_to_end_of_label_or_address(src, "+1") + "\n" \
+                             "\tand " + append_to_end_of_label_or_address(param, "+1") + "\n" \
+                             "\tsta " + append_to_end_of_label_or_address(dest, "+1") + "\n"
+            return out_string
+
+def append_to_end_of_label_or_address(complete, append):
+    if complete.endswith(",x"):
+        return complete[:-2]+append+",x"
+    elif complete.endswith(",y"):
+        return complete[:-2] + append + ",y"
+    else:
+        return complete + append
+
 
 '''m_segmentDM = segmentDataManager.segmentDataManager()
 

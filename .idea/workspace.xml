@@ -14,7 +14,7 @@
       <file leaf-file-name="tassParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tassParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="4928">
               <caret line="232" column="46" lean-forward="false" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="46" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -23,31 +23,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="midLevelAssem.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="midLevelAssem.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-984">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding>
-                <marker date="1511700317655" expanded="true" signature="19628:19650" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="19692:19896" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="19938:20888" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20153:20210" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20235:20726" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20429:20529" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20576:20646" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20753:20849" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20939:22335" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="20980:21122" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21145:21287" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21311:21467" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21490:21625" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21648:21783" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21806:21941" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="21969:22129" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="22153:22313" ph="..." />
-                <marker date="1511700317655" expanded="true" signature="22337:23841" ph="'''...'''" />
-              </folding>
+            <state relative-caret-position="22">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,8 +36,8 @@
       <file leaf-file-name="assemNumHelper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assemNumHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="1144">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,8 +46,8 @@
       <file leaf-file-name="tassIFBlockResolver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tassIFBlockResolver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,7 +56,7 @@
       <file leaf-file-name="tassLineGroup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tassLineGroup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
+            <state relative-caret-position="1782">
               <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -84,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tassDefineManager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tassDefineManager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="147" column="25" lean-forward="false" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+            <state relative-caret-position="3168">
+              <caret line="150" column="38" lean-forward="true" selection-start-line="150" selection-start-column="38" selection-end-line="150" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -97,7 +78,7 @@
       <file leaf-file-name="pyLog.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyLog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
+            <state relative-caret-position="594">
               <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
               <folding />
             </state>
@@ -107,7 +88,7 @@
       <file leaf-file-name="test_assemNumHelper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_assemNumHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
+            <state relative-caret-position="1496">
               <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="24" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -168,10 +149,10 @@
         <option value="$PROJECT_DIR$/tassLineGroup.py" />
         <option value="$PROJECT_DIR$/test_tassLineGroup.py" />
         <option value="$PROJECT_DIR$/tassDefineLine.py" />
-        <option value="$PROJECT_DIR$/midLevelAssem.py" />
-        <option value="$PROJECT_DIR$/tassIFBlockResolver.py" />
         <option value="$PROJECT_DIR$/tassDefineManager.py" />
         <option value="$PROJECT_DIR$/tassParser.py" />
+        <option value="$PROJECT_DIR$/tassIFBlockResolver.py" />
+        <option value="$PROJECT_DIR$/midLevelAssem.py" />
       </list>
     </option>
   </component>
@@ -196,8 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,6 +193,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,20 +437,20 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44962883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44962883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -526,26 +507,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1550">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1511700317655" expanded="true" signature="19628:19650" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19692:19896" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19938:20888" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20153:20210" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20235:20726" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20429:20529" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20576:20646" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20753:20849" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20939:22335" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20980:21122" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21145:21287" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21311:21467" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21490:21625" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21648:21783" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21806:21941" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21969:22129" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22153:22313" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22337:23841" ph="'''...'''" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -568,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,26 +576,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14350">
           <caret line="578" column="29" lean-forward="true" selection-start-line="578" selection-start-column="29" selection-end-line="578" selection-end-column="29" />
-          <folding>
-            <marker date="1511700317655" expanded="true" signature="19628:19650" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19692:19896" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19938:20888" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20153:20210" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20235:20726" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20429:20529" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20576:20646" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20753:20849" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20939:22335" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20980:21122" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21145:21287" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21311:21467" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21490:21625" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21648:21783" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21806:21941" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21969:22129" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22153:22313" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22337:23841" ph="'''...'''" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,26 +616,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2737">
           <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding>
-            <marker date="1511700317655" expanded="true" signature="19628:19650" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19692:19896" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19938:20888" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20153:20210" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20235:20726" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20429:20529" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20576:20646" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20753:20849" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20939:22335" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20980:21122" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21145:21287" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21311:21467" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21490:21625" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21648:21783" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21806:21941" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21969:22129" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22153:22313" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22337:23841" ph="'''...'''" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,13 +740,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_assemNumHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
+        <state relative-caret-position="1496">
           <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="24" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
@@ -835,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyLog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
+        <state relative-caret-position="594">
           <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="26" />
           <folding />
         </state>
@@ -843,15 +763,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assemNumHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="1144">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tassLineGroup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
+        <state relative-caret-position="1782">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -859,44 +779,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tassIFBlockResolver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-984">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <marker date="1511700317655" expanded="true" signature="19628:19650" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19692:19896" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="19938:20888" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20153:20210" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20235:20726" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20429:20529" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20576:20646" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20753:20849" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20939:22335" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="20980:21122" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21145:21287" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21311:21467" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21490:21625" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21648:21783" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21806:21941" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="21969:22129" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22153:22313" ph="..." />
-            <marker date="1511700317655" expanded="true" signature="22337:23841" ph="'''...'''" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tassParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="4928">
           <caret line="232" column="46" lean-forward="false" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="46" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -906,8 +791,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tassDefineManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="147" column="25" lean-forward="false" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        <state relative-caret-position="3168">
+          <caret line="150" column="38" lean-forward="true" selection-start-line="150" selection-start-column="38" selection-end-line="150" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tassIFBlockResolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/midLevelAssem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>

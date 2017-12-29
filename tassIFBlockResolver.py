@@ -23,14 +23,11 @@ class TassIFBlockResolver:
         pylog.write_block_string(block)
         while i < count:
             child = block.children[i]
-            
             block_type = child.type
             if state == IFBlockState.enter:
                 if (block_type == TassLineGroupType.if_block or
                    block_type == TassLineGroupType.if_else):
                     expr = child.children[0].strip()
-                    if expr == ".if DEBUG_MENU_TITLESCREEN == 0":
-                        print("break")
                     first_dot = expr.find('.')
                     command_len = 3
                     if ".elsif" in expr:

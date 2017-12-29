@@ -165,6 +165,11 @@ class TassLineGroup(object):
         for pair in g_lineIDstrings:
             if pair[2]:
                 if pair[0] in stripped_line:
+                    if ";" in stripped_line: # maybe its commented out
+                        comment = stripped_line.index(";")
+                        command = stripped_line.index(pair[0])
+                        if comment < command:
+                            continue  # not valid identification
                     return pair[1]
             elif stripped_line.startswith(pair[0]):
                 return pair[1]

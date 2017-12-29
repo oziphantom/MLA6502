@@ -46,6 +46,8 @@ class AssemNumHelper:
 
     @staticmethod
     def convert_equation_to_python(value):
+        if ";" in value:
+            value = value[0:value.indexof(";")]
         value = value.replace("$", "0x")
         value = value.replace("%", "0b")
         return value.replace(".", "_")

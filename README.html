@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>64tass v1.53 r1515 reference manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Description" content="64tass, an advanced multi pass macro assembler for the 65xx family of microprocessors">
+<meta name="Keywords" content="6502 assembler, 65816, 6510, 65C02, dtv, c64 cross assembler">
+<meta name="Author" content="Kajtar Zsolt">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+dt {margin-top:0.5em}
+dt + dt {margin-top:0em}
+body {font-family:serif;}
+p, dd, h1, h2, h3, h4, li, caption {hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;}
+code {hyphens:manual;-moz-hyphens:manual;-webkit-hyphens:manual;-ms-hyphens:manual;}
+h1, h2, h3, h4 {text-align:left;font-family:sans-serif}
+hr {display:none}
+pre {border:1px dotted #eee;background-color:#ffe;padding:2px; border-radius: 4px;}
+pre.make b {color:inherit;}
+pre.make span {color:navy;}
+pre.make span.cmd {color:green;}
+pre b, code b {color:navy;}
+pre b.d, code b.d {color:#f80;}
+pre b.k, pre span.k, code b.k, code span.k {color:blue;}
+pre span, code span {color:#d00;}
+pre span.s, code span.s {color:#f80;}
+pre i {color:brown;}
+pre u, code u {text-decoration:none;color:green;}
+p, dd {text-align:justify;word-break:hypenate;}
+p + p {text-indent:3ex;margin-top:-0.5em}
+table {border-bottom:2px solid black;border-top:2px solid black;border-collapse:collapse;width:100%;margin-top:0.5em;margin-bottom:0.5em; border-spacing: 0px;}
+td, th {padding: 0px 1ex 0px 1ex;border-left:1px solid silver;border-top:1px solid silver}
+tr:nth-child(odd) {background: #fafaff;}
+td:first-child, th:first-child {border-left: 0px;}
+caption {caption-side:bottom;}
+table.opcodes th, table.opcodes td {text-align:left;table-layout:fixed;}
+table.trans td:nth-child(1), table.trans td:nth-child(4) {text-align:center;}
+dl.errorlist > dt, dl.dir > dt, table.trans td, table.esc td, table.opcodes th, table.opcodes td, code, pre, tt {font-family:monospace,monospace;}
+dl.dir code b { color: inherit; }
+
+thead th {background-color:#eee;border-bottom:1px solid black;}
+
+@media screen {
+   html {background-color: gray;}
+   body > div {max-width:50em;margin-left:auto; margin-right:auto; overflow: hidden;}
+   body {font-size:12pt;max-width:60em; background-color:white; margin-left:auto; margin-right:auto; border:1px solid black; box-shadow: black 2px 2px; padding: 5em 0.5em;}
+   pre, div {overflow:auto;}
+}
+.links {line-height: 2em; word-spacing: 1ex; text-align: justify;}
+
+@media print {
+   h1, h2, h3, h4 {page-break-after:avoid;}
+   a {text-decoration:none;color:inherit;}
+   body {font-size:10pt;}
+   pre {overflow:hidden;}
+}
+
+a[href], a:visited { text-decoration: none; color: blue; }
+a[href]:hover { text-decoration: underline; }
+
+#toc ul { margin: 0px; font-weight: normal;}
+#toc > ul > li { margin-top: 0.5em; font-weight: bold; }
+#toc { counter-reset: count1 }
+#toc > ul > li > a:before { content: counter(count1) " "; counter-increment: count1; }
+#toc > ul > li > a { counter-reset: count2;}
+#toc > ul ul > li > a:before { content: counter(count1) "." counter(count2) " "; counter-increment: count2; }
+#toc > ul ul > li > a { counter-reset: count3;}
+#toc > ul ul ul > li > a:before { content: counter(count1) "." counter(count2) "." counter(count3) " "; counter-increment: count3; }
+
+body { counter-reset: countcaption;}
+h1 { counter-reset: counth2; font-size: 2em; margin: 0 0 0.67em 0; }
+
+h2:before { content: counter(counth2) " "; counter-increment: counth2; min-width: 45pt;display:inline-block;}
+h2 { counter-reset: counth3; }
+h3:before { content: counter(counth2) "." counter(counth3) " "; counter-increment: counth3; min-width: 45pt;display:inline-block;}
+h3 { counter-reset: counth4; }
+h4:before { content: counter(counth2) "." counter(counth3) "." counter(counth4) " "; counter-increment: counth4; min-width: 45pt;display:inline-block;}
+caption:before { content: "Table " counter(countcaption) ": "; counter-increment: countcaption; font-weight:bold;}
+h2 a:after, h3 a:after, h4 a:after, dt a[name][href]:after {content: "¶"}
+h2 a, h3 a, h4 a, dt a[name][href] {color:blue;visibility:hidden;text-decoration:none;}
+h2:hover a, h3:hover a, h4:hover a, dt:hover a[name][href] {visibility:visible;}
+
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+</style>
+</head>
+<body>
+<div>
+<h1>MLA V1 reference manual</h1>
+
+<p>This is the manual for Mid Level Assembley - the not quite C but still higher level while giving low level control Assembley. Designed to extend 64tass</p>
+<hr>
+<h2>Table of Contents<a name="contents" href="#contents"></a></h2>
+
+<div id="toc">
+<ul>
+ <li><a href="#contents">Table of Contents</a></li>
+ <li><a href="#assgins">Immediate assign</a></li>
+ <li><a href="#if">Ifs</a></li>
+ <li><a href="#maths">Maths</a></li>
+ </ul>
+
+ <hr>
+ <h2>Immediate assign<a name="Immediate assign" href="#assgins"></a></h2>
+ <p>You can use MLA to auto set and outline assigns. It will auto look up and optimise assignement groups. The order in which assignents are made is random each build</p>
+ <pre width=80>
+ !!Destination = Source
+ </pre>
+<p>There are some special Souce tags to help with optimisations</p>
+<ul>
+    <li><code>POS</code> - this will choose any other positive value, if none is found 0 is used</li>
+    <li><code>NEG</code> - this will choose any other negative value, if none is found 128 is used</li>
+    <li><code>NOTZERO</code> - this will choose any other value that is not zero, if none if found 1 is used</li>
+</ul>
+<pre width=80>
+    !!Test = #5
+    !!Test2,x = Other,y
+    !!Pos = POS
+    !!Neg = NEG
+    !!Something = NOTZERO
+    !!Other = POS
+</pre>
+<p>will generatre for example</p>
+<pre width=80>
+	lda #128
+	sta Neg
+	lda #5
+	sta Test
+	sta Pos
+	sta Something
+	lda Other,y
+	sta Test2,x
+	lda #0
+	sta Other
+</pre>
+<h3>Word Assignments</h3>
+<p><code>w=</code> is used to copy or assign words</p>
+<pre width=80>
+        !!Test w= #5000
+        !!Test2,x w= Other,y
+    </pre> becomes <pre width=80>
+        lda #>5000
+        sta Test+1
+        lda Other,y
+        sta Test2,x
+        lda #&lt;5000
+        sta Test
+        lda Other+1,y
+        sta Test2+1,x</pre>
+<h3>Run optimisations</h3>
+<p>The code will detect if numbers or values form a "run" so if you do</p>
+<pre width=80>
+    !!Test = #5
+    !!Test2 = #6
+</pre>
+<p>you will get something like</p>
+<pre width=80>
+    ldx #5
+    stx Test
+    inx
+    stx Test2</pre>
+</body>
+
+<hr>
+<h2>Ifs<a name="Ifs" href="#if"></a></h2>
+<h3>If then</h3>
+<pre width=80>
+    !!if XX &lt; XX then dest
+    !!if XX &lt;= XX then dest
+    !!if XX == XX then dest
+    !!if XX > XX then dest
+    !!if XX >= XX then dest
+    !!if XX != XX then dest
+</pre><p>This will subsitute for a load, cmp, branch. If the branch can be optimised, for example >128 to bmi it will be. Also if you do > constant it will make it >= constant + 1</p>
+<pre width=80>
+    !!if XX =- then dest
+    !!if XX =+ then dest
+    !!if XX =0 then dest
+    !!if XX !0 then dest
+</pre><p>these are direct compare function, =- is negative, =+ is positive, =0 is beq, !0 is bne</p>
+<div><table border="0">
+        <caption>Choosing register</caption>
+        <tbody>
+        <tr><td><code>!!if</code></td><td>this will use a or bit if applicable</td></tr>
+        <tr><td><code>!!ifa</code></td><td>this will use a and never bit</td></tr>
+        <tr><td><code>!!ifx</code></td><td>this will use x</td></tr>
+        <tr><td><code>!!ify</code></td><td>this will use y</td></tr>
+        </tbody></table></div>
+<h3>If bit</h3>     
+<pre width=80>
+    !!if XX bit XX then dest - beq
+    !!if not XX bit XX then dest - bne</pre>
+    <p>This will do a lda and and then beq or bne based upon the not status. However if you are compraing against #$80 or #$40 and you are using an address mode that bit supports, the code will be optimised to use bit bpl/bmi or bit bvs/bvc as applicable</p>
+
+    <hr>
+    <h2>Maths<a name="Maths" href="#maths"></a></h2>
+    <pre width=80>!!XX [operator] YY</pre>
+    <div><table border="0">
+            <caption>operators</caption>
+            <tbody>
+            <tr><td><code>+=</code></td><td>8bits += 8bits</td></tr>
+            <tr><td><code>-=</code></td><td>8bits -= 8bits</td></tr>
+            <tr><td><code>&lt;&lt;=</code></td><td>8bits asl a * YY</td></tr>
+            <tr><td><code>&gt;&gt;=</code></td><td>8bits lsr a * YY</td></tr>
+            <tr><td><code>|=</code></td><td>8bits or</td></tr>
+            <tr><td><code>&amp;=</code></td><td>8bits and</td></tr>
+            <tr><td><code>^=</code></td><td>8bits eor</td></tr>
+            </tbody></table></div>
+            <pre width=80>!!XX [operator] YY, ZZ</pre>
+    <div><table border="0">
+            <caption>compound operations</caption>
+            <tbody>
+    <tr><td><code>&amp;!=</code></td><td>8bits and YY 8bits or ZZ</td></tr>
+</tbody></table></div>

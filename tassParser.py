@@ -77,7 +77,7 @@ class TassParser(object):
 
     def collapse_identical_sub_blocks(self):
         lines_length = len(self.classifiedLines)
-        i = lines_length-2
+        i = lines_length-1
         t = TassLineGroupType.not_special
         curr_type = self.classifiedLines[lines_length-1].type
         while i >= 0:
@@ -156,7 +156,6 @@ class TassParser(object):
                     local_output.write(local_line)
                 else:
                     self.write_out_file_internal(local_output, local_line)
-
 
     def evaluate_block_assigns(self, classified_lines, block_assign_lines, weak_block_assign, tbe):
         for cl in classified_lines:

@@ -175,8 +175,17 @@ class TassDefineManager:
                     for s in strings:
                         pylog.write_log(s)
                     pylog.write_log("</td><td>")
-                    for l in out:
+                    group = ""
+                    if isinstance(out, str):
                         pylog.write_log(l)
+                    else:
+                        for l in out:
+                            if len(l) == 1:
+                                group += l
+                            else:
+                                pylog.write_log(l)
+                        if len(group):
+                            pylog.write_log(group)
                     pylog.write_log("</td></tr></table></code>")
                     # replace it
                     replacements[block] = out
@@ -190,11 +199,16 @@ class TassDefineManager:
     def lookup_value_for(self, value):
         found = False
         original = value
+        value = value.strip()
+        extra = ""
 
         if value.startswith("#"):
             value = value[1:]  # remove the #
         if "," in value:
-            value = value.split(",")[0]
+            splits = value.split(",")
+            value = splits[0]
+            for ex in splits[1:]:
+                extra += ","+ex
 
         if AssemNumHelper.is_hex(value):
             value = AssemNumHelper.get_int_from_hex(value)
@@ -209,7 +223,9 @@ class TassDefineManager:
             value = self.variables[value.lower()]
             found = True
         if found:
-            pylog.write_log(original+" was substituted with "+str(value))
+            pylog.write_log(original+" was substituted with "+str(value)+extra)
+            if len(extra):
+                return str(value)+extra
             return value
         pylog.write_log(original+" not found")
         return original

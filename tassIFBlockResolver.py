@@ -33,6 +33,10 @@ class TassIFBlockResolver:
                     if ".elsif" in expr:
                         command_len = 6
                     expr_no_if = expr[first_dot+command_len:].strip()
+                    if ";" in expr_no_if:
+                        semi_index = expr_no_if.index(";")
+                        expr_no_if = expr_no_if[0:semi_index]
+
                     pylog.write_log("evaluating "+expr_no_if)
                     result = False
                     try:

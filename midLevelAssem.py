@@ -268,6 +268,9 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
     immediate_single = []
     words = []
     runs = []
+    srcs = []
+    dests = []
+
     for line in lines:
         sd = get_src_dest_from_line(line, tdm)
         if sd.word:
@@ -281,6 +284,8 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
 
     for thing in single:
         addPair(pairs, thing.src, thing.dest)
+        srcs.append(thing.src)
+        dests.append(thing.dest)
 
     for thing in words:
         # is it immediate word or address
@@ -292,9 +297,12 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
             addPair(pairs, "#<"+local_src, thing.dest)
             # make hi
             addPair(pairs, "#>"+local_src, append_to_end_of_label_or_address(str(thing.dest), "+1"))
+            srcs.append(local_src)
         else:  # nope its a word copy
             addPair(pairs, thing.src, thing.dest)
             addPair(pairs, append_to_end_of_label_or_address(str(thing.src), "+1"), append_to_end_of_label_or_address(str(thing.dest), "+1"))
+            srcs.append(thing.src)
+            dests.append(thing.dest)
 
     index_letter = get_index_letter_for_prehib(prehib)
     # now we have a list of values that need to go to addresses
@@ -324,12 +332,17 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
                 specials.append(thing)
             else:
                 addPair(pairs, thing.src, thing.dest)  # nothing special we can do so add to dest
+                srcs.append(thing.src)
+                dests.append(thing.dest)
         else:
             if thing.src_immediate:
                 numbers.append(thing.src)
                 addPair(imm_pairs, thing.src, thing.dest)
+                dests.append(thing.dest)
             else:
                 addPair(pairs, thing.src, thing.dest)  # nothing special we can do so add to dest
+                srcs.append(thing.src)
+                dests.append(thing.dest)
 
     for spec in specials:
         found = False
@@ -375,6 +388,12 @@ def convert_straight_assignment_block_to_asm(lines, segmentDM, tdm, prehib):
 
     numbers.sort()
     number_safe = []
+
+    # check to make sure we don't enter a random race condition
+    for src in srcs:
+        if src in dests:
+            print("ERROR - SRC and DEST match in a single block - " + src)
+            exit(1)
 
     num_len = len(numbers)
     if num_len > 0:  # do we have just numbers to deal with

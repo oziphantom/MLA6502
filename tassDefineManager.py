@@ -210,7 +210,14 @@ class TassDefineManager:
             for ex in splits[1:]:
                 extra += ","+ex
 
-        if AssemNumHelper.is_hex(value):
+        if AssemNumHelper.is_equation(value):
+            try:
+                value = AssemNumHelper.convert_equation_to_python(value)
+                value = eval(value, self.python_variables)
+                found = True
+            except:
+                found = False
+        elif AssemNumHelper.is_hex(value):
             value = AssemNumHelper.get_int_from_hex(value)
             found = True
         elif AssemNumHelper.is_binary(value):
